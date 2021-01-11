@@ -278,9 +278,7 @@ Mutual Information of the Features and Motivations
 
 The Mutual Information represents a standard metric in Machine Learning to perform Feature Engineering. If the correlation measures give a global knowledge on the features, more specific statistics are useful to explain the contribution of each information in the final prediction. Table [tab:mutualinfo] furtherly confirms the central role of the Moving Averages in the predictions, evidencing how for the intra-daily scenario the fastest moving averages (i.e. the moving averages with a smaller window) are more adequate.
 
-[]
-
-[tab:mutualinfo]
+![Mutual](https://user-images.githubusercontent.com/48285797/104189568-2403a180-541b-11eb-9056-e7d69c0d057b.png)
 
 However, the support of slower MAs is justified by many financial strategies. Indeed, the financial technical analysis often makes use of combinations of them, by varying the type and the period. A longer period is usually referred to a slow moving average, because the indicator better absorbes variability by averaging it on the last *period* timeframes. On the contrary, a faster moving average is associated to a shorter averaging period, being thus more influenced by short-term variability.
 Traders generally look to the crossovers of slow and fast moving averages, since they create some accurate pivot points, useful to determine the entry or exit points for BUY/SELL orders.
@@ -351,9 +349,7 @@ Random Forest Regression and Impurity
 
 The Random Forest Regression models allowed to evaluate further statistics on the explained variance of each future on the final prediction. This can be done by the model by monitoring how the OOB (out-of-the-bag) error evolves according to the splits at each node and the features excluded by each estimator. As Table [tab:explainedvar] summarizes, over 95% of the total variance is explained by 5 of the fastest moving averages, being another confirmation of the aforementioned Feature Engineering.
 
-[!htbp]
-
-[tab:explainedvar]
+![Variance](https://user-images.githubusercontent.com/48285797/104189563-236b0b00-541b-11eb-84d1-0b159c476a4a.png)
 
 Error Measures: Pearson Correlation, Dynamic Time Warping (DTW) and Fast DTW
 ============================================================================
