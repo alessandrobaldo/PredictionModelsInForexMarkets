@@ -1,0 +1,182 @@
+{
+	"Linear Regression":{
+		"AUDCAD":{
+			
+		},
+		"AUDUSD":{
+			
+		},
+		"EURAUD":{
+			
+		},
+		"EURCAD":{
+			
+		},
+		"EURCHF":{
+			
+		},
+		"EURGBP":{
+			
+		},
+		"EURJPY":{
+			
+		},
+		"EURUSD":{
+			
+		},
+		"GBPUSD":{
+			
+		},
+		"USDCAD":{
+			
+		},
+		"USDJPY":{
+			
+		}
+		
+	},
+	"Bayesian Ridge Regression":{
+		"AUDCAD":{
+			'tol': 1e-10, 'n_iter': 100
+		},
+		"AUDUSD":{
+			'tol': 1e-6, 'n_iter': 100
+		},
+		"EURAUD":{
+			'tol': 1e-10, 'n_iter': 100
+		},
+		"EURCAD":{
+			'tol': 1e-10, 'n_iter': 100
+		},
+		"EURCHF":{
+			'tol': 1e-6, 'n_iter': 100
+		},
+		"EURGBP":{
+			'tol': 1e-10, 'n_iter': 100
+		},
+		"EURJPY":{
+			'tol': 1e-6, 'n_iter': 100
+		},
+		"EURUSD":{
+			'tol': 1e-10, 'n_iter': 100
+		},
+		"GBPUSD":{
+			'tol': 1e-10, 'n_iter': 100
+		},
+		"USDCAD":{
+			'tol': 1e-10, 'n_iter': 100
+		},
+		"USDJPY":{
+			'tol': 1e-6, 'n_iter': 100
+		}
+		
+	},
+	"Support Vector Regression":{
+		"AUDCAD":{
+			'C': 1, 'kernel': 'rbf', 'gamma': 0.001, 'degree': 1
+		},
+		"AUDUSD":{
+			'C': 10, 'kernel': 'poly', 'gamma': 0.0001, 'degree': 1
+		},
+		"EURAUD":{
+			'C': 10, 'kernel': 'poly', 'gamma': 0.0001, 'degree': 2
+		},
+		"EURCAD":{
+			'C': 0, 'kernel': 'poly', 'gamma': 0.0001, 'degree': 2
+		},
+		"EURCHF":{
+			'C': 1, 'kernel': 'rbf', 'gamma': 0.001, 'degree': 1
+		},
+		"EURGBP":{
+			'C': 10, 'kernel': 'poly', 'gamma': 0.001, 'degree': 3
+		},
+		"EURJPY":{
+			'C': 10, 'kernel': 'linear', 'gamma': 0.01, 'degree': 1
+		},
+		"EURUSD":{
+			'C': 10, 'kernel': 'poly', 'gamma': 0.01, 'degree': 2
+		},
+		"GBPUSD":{
+			'C': 1, 'kernel': 'poly', 'gamma': 0.0001, 'degree': 1
+		},
+		"USDCAD":{
+			'C': 1, 'kernel': 'poly', 'gamma': 0.0001, 'degree': 2
+		},
+		"USDJPY":{
+			'C': 10, 'kernel': 'linear', 'gamma': 0.001, 'degree': 1
+		}
+		
+	},
+	"Random Forest Regression":{
+		"AUDCAD":{
+			'n_estimators': 500
+		},
+		"AUDUSD":{
+			'n_estimators': 500
+		},
+		"EURAUD":{
+			'n_estimators': 500
+		},
+		"EURCAD":{
+			'n_estimators': 500
+		},
+		"EURCHF":{
+			'n_estimators': 500
+		},
+		"EURGBP":{
+			'n_estimators': 500
+		},
+		"EURJPY":{
+			'n_estimators': 500
+		},
+		"EURUSD":{
+			'n_estimators': 500
+		},
+		"GBPUSD":{
+			'n_estimators': 500
+		},
+		"USDCAD":{
+			'n_estimators': 500
+		},
+		"USDJPY":{
+			'n_estimators': 500
+		}
+		
+	},
+	"KNN Regression":{
+		"AUDCAD":{
+			'algorithm': 'brute', 'weights': 'distance', 'n_neighbors': 50
+		},
+		"AUDUSD":{
+			'algorithm': 'brute', 'weights': 'distance', 'n_neighbors': 50
+		},
+		"EURAUD":{
+			'algorithm': 'ball_tree', 'weights': 'distance', 'n_neighbors': 50
+		},
+		"EURCAD":{
+			'algorithm': 'ball_tree', 'weights': 'distance', 'n_neighbors': 50
+		},
+		"EURCHF":{
+			'algorithm': 'ball_tree', 'weights': 'distance', 'n_neighbors': 50
+		},
+		"EURGBP":{
+			'algorithm': 'ball_tree', 'weights': 'distance', 'n_neighbors': 50
+		},
+		"EURJPY":{
+			'algorithm': 'ball_tree', 'weights': 'distance', 'n_neighbors': 50
+		},
+		"EURUSD":{
+			'algorithm': 'ball_tree', 'weights': 'distance', 'n_neighbors': 50
+		},
+		"GBPUSD":{
+			'algorithm': 'ball_tree', 'weights': 'distance', 'n_neighbors': 50
+		},
+		"USDCAD":{
+			'algorithm': 'ball_tree', 'weights': 'distance', 'n_neighbors': 50
+		},
+		"USDJPY":{
+			'algorithm': 'brute', 'weights': 'distance', 'n_neighbors': 50
+		}
+		
+	}
+}

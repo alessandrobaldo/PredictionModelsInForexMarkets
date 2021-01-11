@@ -1,0 +1,6 @@
+Epochs: 30
+Batch Size: 32
+Learning Rate: 0.0005Number of Channels:4
+Number of Filters:64
+KernelSize: 3
+Adaptive Learning Rate: Yes

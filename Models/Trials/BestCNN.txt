@@ -1,0 +1,5 @@
+Epochs: 100
+Batch Size: 64
+Learning Rate: 0.03
+Filters:[16, 32, 64]
+Kernel Size:7

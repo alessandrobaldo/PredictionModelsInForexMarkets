@@ -1,0 +1,7 @@
+Epochs: 1000
+Batch Size: 32
+Learning Rate: 0.0001
+Number of LSTM Layers:None
+Size LSTM Cells:None
+Number of Features: None
+Early Stopping: 50
