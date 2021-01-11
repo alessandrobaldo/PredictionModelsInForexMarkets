@@ -68,14 +68,14 @@ The Forex exchange market (Forex, or FX) is the global market for the currencies
 **Position Traders** hold trades for longer periods of time, from several weeks to years. As the longest holding period among trading styles, position traders are less interested in an asset’s short-term price fluctuations and more concerned, naturally, with the performance over more sustained timeframes.
 **Algorithmic Traders** rely on computer programs to place trades for them at the best possible prices. Traders can use defined instructions, or high-frequency trading algorithms, to either code the programs themselves, or purchase existing products.
 **Event-driven Traders** look to fundamental analysis over technical charts to inform their decisions.
-**Appendix [app:forex]** majorly describes the Forex market and the basic trading rules related to it.
+**Appendix Forex** majorly describes the Forex market and the basic trading rules related to it.
 
 Data
 ====
 
 Data has been retrieved from the open-data directory EaForexAcademy [2], by collecting the historical trends of 11 major currency pairs, under 7 different time-frame intervals (from a 1 minute frequency, counting about 200’000 records, to a daily time division, mapping the last 13 years).
-These raw data contains the *Open*, *Close*, *High*, *Low* prices and the *Volume* reference, from which the 28 technical indicators were computed for each interval of the series. The list of the indicators comprehends two indexes related to the variations of price and volumes between consecutive time frames, four types of moving averages, mapped into four different periods and statistical oscillators. In **Appendix [app:indicators]** each of these features is more deeply explored and illustrated. Then, in **Appendix [app:featureeng]**, the focus is moved to the engineering process behind this choice of measures.
-The consequent step for the management of data dealt with the normalization of the features, due to some existing diversities. The generation of the images then collected all these records and features, at step of 28 time-frames. The target was set as the *Close* price of the immediately subsequent interval. This process was iteratively repeated, by scaling each 28 intervals window by one step forward. Some data augmentation (**Appendix [app:dataaug]**) was performed to improve the model robustness.
+These raw data contains the *Open*, *Close*, *High*, *Low* prices and the *Volume* reference, from which the 28 technical indicators were computed for each interval of the series. The list of the indicators comprehends two indexes related to the variations of price and volumes between consecutive time frames, four types of moving averages, mapped into four different periods and statistical oscillators. In **Appendix Indicators** each of these features is more deeply explored and illustrated. Then, in **Appendix Feature Engineering**, the focus is moved to the engineering process behind this choice of measures.
+The consequent step for the management of data dealt with the normalization of the features, due to some existing diversities. The generation of the images then collected all these records and features, at step of 28 time-frames. The target was set as the *Close* price of the immediately subsequent interval. This process was iteratively repeated, by scaling each 28 intervals window by one step forward. Some data augmentation (**Appendix Data Augmentation**) was performed to improve the model robustness.
 For the training purposes, the daily time interval was considered as a trade-off between the enlargement of training times and the inclusion of data characterized by higher variances. The latter was particularly beneficial to improve the generalization capabilities of the models on shorter times frames, where the variability resulted to be more distributed in time.
 The division among training, validation and test sets was respectively done according to the 72-8-10 proportions for the Deep Learning models and according to the Pareto rule (i.e. 80-20) for the Machine Learning models. As suggested by the choice of the time intervals, the focus mainly dealt with Day Traders and Scalpers scenarios.
 
@@ -109,7 +109,7 @@ Each block is composed of two layers of dilated convolutions and rectified linea
 
 ![residualblock](https://user-images.githubusercontent.com/48285797/104187077-a25e4480-5417-11eb-8542-2b456ce343b1.jpeg)
 
-In **Appendix [app:TCN]** the final network structures, as well as the choice of the hyper-parameters are treated more extensively.
+In **Appendix TCN** the final network structures, as well as the choice of the hyper-parameters are treated more extensively.
 
 Recurrent LSTM Neural Network
 -----------------------------
@@ -124,7 +124,7 @@ LSTM is a variant of a RNN introduced to cope with the vanishing gradient proble
 
 ![LSTMBasic](https://user-images.githubusercontent.com/48285797/104187082-a2f6db00-5417-11eb-97f9-3c775eb81edf.png)
 
-In **Appendix [app:LSTM]** the final network structures, as well as the choice of the hyper-parameters are treated more extensively.
+In **Appendix LSTM** the final network structures, as well as the choice of the hyper-parameters are treated more extensively.
 
 Convolutional Neural Network
 ----------------------------
@@ -132,7 +132,7 @@ Convolutional Neural Network
 The study-case also required to test a more common Convolution Network, able to exploit the spatial domain of the features. Indeed, the data format is such that similarity between the features are also enhanced by their contiguous positions in the image.
 The main block of the network is thus composed of a Conv2D layer, followed by a MaxPooling2D layer and a BatchNormalization operation. The activation function is a ReLU (Rectified Linear Unit), in order to prevent overfitting.
 Such block is then repeated according to the numerosity of the filters, and it is then aggregated to three Dense layers of progressively decreasing dimensions (16-4-1). The former is characterized by a ReLU activation and a Dropout operation to counterbalance overfitting, a BatchNormalization is applied too. The last two layers are instead respectively set with a ReLU and a Linear activation functions.
-The final network structures, as well as the choice of the hyper-parameters are treated more extensively in **Appendix [app:CNN]**.
+The final network structures, as well as the choice of the hyper-parameters are treated more extensively in **Appendix CNN**.
 
 Linear and Bayesian Ridge Regression
 ------------------------------------
@@ -150,7 +150,7 @@ Support Vector Regression (SVR) was adopted for its very well-known capability o
 Random Forest Regression
 ------------------------
 
-Random Forest Regression was included to enlarge the spectrum of the methods to the Ensemble learning branch and due to its high potentialities . In addition, it offers a built-in tracking method of the percentage of variance explained by each one of the features, expanding its application to the Feature Engineering (**Appendix [app:featureeng]**) task. The results of this tracking method are discussed in **Appendix [app:randomforest]**.
+Random Forest Regression was included to enlarge the spectrum of the methods to the Ensemble learning branch and due to its high potentialities . In addition, it offers a built-in tracking method of the percentage of variance explained by each one of the features, expanding its application to the Feature Engineering (**Appendix Feature Engineering**) task. The results of this tracking method are discussed in **Appendix Random Forest**.
 
 K-Nearest Neighbours Regression
 -------------------------------
@@ -393,17 +393,14 @@ Despite the very detailed implementation of this automatic trading strategy, the
 
 ![RandomForest](https://user-images.githubusercontent.com/48285797/104187079-a2f6db00-5417-11eb-955f-c89f962ecbd2.png)
 
-[fig:RandomForest]
 
 
 ![TCN](https://user-images.githubusercontent.com/48285797/104187070-a12d1780-5417-11eb-90fd-be445163e433.png)
 
-[fig:TCNoutput]
 
 
 ![RNN](https://user-images.githubusercontent.com/48285797/104187076-a25e4480-5417-11eb-96f3-807d5120a363.png)
 
-[fig:LSTMoutput]
 
 
 [1] Data retrieved in April 2019 by the Bank for International Settlement
