@@ -42,3 +42,28 @@ The folder "Trials" collect some scripts and notebooks referring to some experim
 
 ## Main Libraries
 All the working  models were written with the Tensorflow 2.0 and Keras Libraries
+
+```{=latex}
+
+\begin{table}[tbp]
+\begin{center}
+\begin{threeparttable}
+\caption{Descriptive statistics included in the present study.}
+\begin{tabular}{ll}
+\toprule
+cyl & \multicolumn{1}{c}{Some columnname}\
+\midrule
+4.00 & 26.66 &plusmn; 4.51\
+6.00 & 19.74 &plusmn; 1.45\
+8.00 & 15.1 &plusmn; 2.56\
+\bottomrule
+\addlinespace
+\end{tabular}
+\begin{tablenotes}[para]
+\textit{Note.} There were no signnificant differences in the means between the groups.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\end{table}
+
+```
