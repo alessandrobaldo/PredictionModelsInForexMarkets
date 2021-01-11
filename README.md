@@ -93,7 +93,7 @@ By merging the benefits of the Convolutional Neural Networks, with the memory-pr
 It is desgined around the two basic principles of *causal convolution*, where no information is leaked from past to future, keeping a memory of the initial “states”, and of an architecture mapping dynamically input and output sequences of any length, allowing both the one-to-one, one-to-many and many-to-many paradigms.
 Since a simple causal convolution has the disadvantage to look behind at history with size linear in the depth of the network (i.e. the receptive field grows linearly with every additional layer), the architecture employs convolutions with *dilation* (Figure [fig:dilation]), enabling an exponentially large receptive field. Under a mathematical point of view, this means mapping an input sequence $x \in \mathcal{R}^T$ with a filter $f:\{0,...k-1\}\rightarrow \mathcal{R}$, using a convolution operator $F$ in this way:
 
-\[F(x)=(x_d f)(x)=\sum_{i=0}^{k-1}x_{s-d \cdot i}\]
+$$F(x)=(x_d f)(x)=\sum_{i=0}^{k-1}x_{s-d \cdot i}$$
 
 
 where $d=2^l$ is the dilation factor, $l$ the level of the network and $k$ the kernel size of the filter.
