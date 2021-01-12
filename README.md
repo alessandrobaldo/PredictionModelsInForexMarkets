@@ -174,7 +174,10 @@ Details: Indicators
 ===================
 
 -   **Yield**
-<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;\begin{equation}&space;Yield&space;=&space;\frac{Close&space;-&space;Open}{Open}&space;\end{equation}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\begin{equation}&space;Yield&space;=&space;\frac{Close&space;-&space;Open}{Open}&space;\end{equation}" title="\begin{equation} Yield = \frac{Close - Open}{Open} \end{equation}" /></a>
+
+<img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\begin{equation}&space;Yield&space;=&space;\frac{Close&space;-&space;Open}{Open}&space;\end{equation}" title="\begin{equation} Yield = \frac{Close - Open}{Open} \end{equation}" />
+
+
     \begin{equation}
     Yield = \frac{Close - Open}{Open}
     \end{equation}
