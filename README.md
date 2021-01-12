@@ -174,13 +174,7 @@ Details: Indicators
 ===================
 
 -   **Yield**
-
-<img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\begin{equation}&space;Yield&space;=&space;\frac{Close&space;-&space;Open}{Open}&space;\end{equation}" title="\begin{equation} Yield = \frac{Close - Open}{Open} \end{equation}" />
-
-
-    \begin{equation}
-    Yield = \frac{Close - Open}{Open}
-    \end{equation}
+    <img src="http://www.sciweavers.org/tex2img.php?eq=%5Cbegin%7Bequation%7D%0A%20%20%20%20Yield%20%3D%20%5Cfrac%7BClose%20-%20Open%7D%7BOpen%7D%0A%20%5Cend%7Bequation%7D%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="\begin{equation}    Yield = \frac{Close - Open}{Open} \end{equation}" width="187" height="40" />
 
 -   **Percentage Volume**
     \begin{equation}
