@@ -174,54 +174,66 @@ Details: Indicators
 ===================
 
 -   **Yield**
+
     ![Yield](https://user-images.githubusercontent.com/48285797/104350672-b469e100-5504-11eb-8e50-c2320923b703.png)  
 
 -   **Percentage Volume**
-
     
+    ![PercVol](https://user-images.githubusercontent.com/48285797/104350666-b338b400-5504-11eb-9bea-2925facbe4e7.png)
     
--   Simple Moving Averagee (**SMA**) of period $n$
-
-  
+-   Simple Moving Averagee (**SMA**) 
     
--   Exponential Moving Averages (**EMA**) of period $n$
-
+    ![SMA](https://user-images.githubusercontent.com/48285797/104350667-b3d14a80-5504-11eb-941d-fe00ef658433.png)
+    
+-   Exponential Moving Averages (**EMA**)
+    
+    ![EMA](https://user-images.githubusercontent.com/48285797/104350661-b2a01d80-5504-11eb-95d8-092d66a6ab7d.png)
    
--   Weighted Moving Averages (**WMA**) of period $n$
-
+-   Weighted Moving Averages (**WMA**) 
     
--   Hull Moving Averages (**HMA**) of period $n$
-
+    ![WMA](https://user-images.githubusercontent.com/48285797/104350671-b469e100-5504-11eb-89c1-1b8b8ebdfd10.png)
+    
+-   Hull Moving Averages (**HMA**)
+    
+    ![HMA](https://user-images.githubusercontent.com/48285797/104350669-b3d14a80-5504-11eb-890e-05da4911988b.png)
 
 -   Moving Average Convergence/Divergence (**MACD**)
-
+    
+    ![MACD](https://user-images.githubusercontent.com/48285797/104350676-b5027780-5504-11eb-9986-04662ccc24c6.png)
     
 -   Commodity Channel Index (**CCI**)
-
+    
+    ![CCI](https://user-images.githubusercontent.com/48285797/104350674-b5027780-5504-11eb-8391-078f45eea342.png)
 
 -   **Stochastic Oscillator**
+    
+    ![StochOsc](https://user-images.githubusercontent.com/48285797/104350662-b2a01d80-5504-11eb-8c68-4b747eeba6ee.png)
 
-
-    where <img src="http://www.sciweavers.org/tex2img.php?eq=H14%2CL14%0A%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="H14,L14" width="68" height="17" /> are repsectively the Highest and Lowest prices registered in the last 14 time intervals
+    where *H14,L14* are repsectively the Highest and Lowest prices registered in the last 14 time intervals
 
 -   Relative Strength Index (**RSI**)
+    
+    ![RSI](https://user-images.githubusercontent.com/48285797/104350660-b2078700-5504-11eb-9957-e7551f0a9e4f.png)
 
-
-    where <img src="http://www.sciweavers.org/tex2img.php?eq=U%2CD%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="U,D" width="37" height="17" /> are respectively the average of the differences <img src="http://www.sciweavers.org/tex2img.php?eq=Close-Open&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="Close-Open" width="104" height="17" /> of the last $n$ Bullish/Bearish bars
+    where *U,D* are respectively the average of the differences *Close-Open* of the last $n$ Bullish/Bearish bars
 
 -   Rate of Change (**ROC**)
-
+    
+    ![ROC](https://user-images.githubusercontent.com/48285797/104350655-b16ef080-5504-11eb-9d2f-7ac53952edf1.png)
 
 -   Percentage Price Oscillator (**PPO**)
-
+    
+    ![PPO](https://user-images.githubusercontent.com/48285797/104350656-b2078700-5504-11eb-9f6a-63908fd6896c.png)
 
 -   Know Sure Thing (**KST**)
-
+    
+    ![KST](https://user-images.githubusercontent.com/48285797/104350665-b338b400-5504-11eb-9442-029952dad828.png)
 
 -   Bollinger Bands Middle, Up and Down (**BOLM**,**BOLU**,**BOLD**)
+    
+    ![BOLS](https://user-images.githubusercontent.com/48285797/104350651-b0d65a00-5504-11eb-8cec-5c2b1103c918.png)
 
-
-    where <img src="http://www.sciweavers.org/tex2img.php?eq=%5Csigma_%7B20%7D%28TypicalPrice%29%0A%0A%20%20%20%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="\sigma_{20}(TypicalPrice)   " width="132" height="19" /> is the standard deviation of the last 20 Typical Prices
+    where ![sigma](https://user-images.githubusercontent.com/48285797/104351349-92249300-5505-11eb-89e8-dd23fd142a84.png) is the standard deviation of the last 20 Typical Prices
 
 Feature Enginnering
 ===================
