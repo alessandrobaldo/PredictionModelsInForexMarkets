@@ -174,85 +174,66 @@ Details: Indicators
 ===================
 
 -   **Yield**
-    <img src="http://www.sciweavers.org/tex2img.php?eq=%5Cbegin%7Bequation%7D%0A%20%20%20%20Yield%20%3D%20%5Cfrac%7BClose%20-%20Open%7D%7BOpen%7D%0A%20%5Cend%7Bequation%7D%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="\begin{equation}    Yield = \frac{Close - Open}{Open} \end{equation}" width="187" height="40" />
+
+    <img src="http://www.sciweavers.org/tex2img.php?eq=%20%20%20%20Yield%20%3D%20%5Cfrac%7BClose%20-%20Open%7D%7BOpen%7D%0A%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="    Yield = \frac{Close - Open}{Open}" width="167" height="40" />
 
 -   **Percentage Volume**
-    \begin{equation}
-    PercentageVolume = 10^4\frac{High - Low}{Volume}
-    \end{equation}
 
+    <img src="http://www.sciweavers.org/tex2img.php?eq=PercentageVolume%20%3D%2010%5E4%5Cfrac%7BHigh%20-%20Low%7D%7BVolume%7D%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="PercentageVolume = 10^4\frac{High - Low}{Volume}" width="279" height="36" />
+    
 -   Simple Moving Averagee (**SMA**) of period $n$
-    \begin{equation}
-    \mathrm{SMA}_i(Close, n) = \frac 1n \sum_{i=0}^n Close_{n-i}
-    \end{equation}
+
+   <img src="http://www.sciweavers.org/tex2img.php?eq=%20%20%20%20%5Cmathrm%7BSMA%7D_i%28Close%2C%20n%29%20%3D%20%5Cfrac%201n%20%5Csum_%7Bi%3D0%7D%5En%20Close_%7Bn-i%7D%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="    \mathrm{SMA}_i(Close, n) = \frac 1n \sum_{i=0}^n Close_{n-i}" width="242" height="47" />
     
 -   Exponential Moving Averages (**EMA**) of period $n$
-    \begin{equation}
-    \mathrm{EMA}_i(Close, n) = \alpha\cdot Close_{i} + (1-\alpha)\cdot \mathrm{EMA}_{i-1}(Close,n)
-    \end{equation}
+
+    <img src="http://www.sciweavers.org/tex2img.php?eq=%20%20%20%20%5Cmathrm%7BEMA%7D_i%28Close%2C%20n%29%20%3D%20%5Calpha%5Ccdot%20Close_%7Bi%7D%20%2B%20%281-%5Calpha%29%5Ccdot%20%5Cmathrm%7BEMA%7D_%7Bi-1%7D%28Close%2Cn%29%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="    \mathrm{EMA}_i(Close, n) = \alpha\cdot Close_{i} + (1-\alpha)\cdot \mathrm{EMA}_{i-1}(Close,n)" width="418" height="19" />
 
 -   Weighted Moving Averages (**WMA**) of period $n$
 
-    \begin{equation}
-    \mathrm{WMA}_i(Close, n) =\frac{\sum _ {i=0}^{n-1} i \cdot Close_{i}}{\frac{n(n-1)}2}
-    \end{equation}
+    <img src="http://www.sciweavers.org/tex2img.php?eq=%20%20%20%20%5Cmathrm%7BWMA%7D_i%28Close%2C%20n%29%20%3D%5Cfrac%7B%5Csum%20_%20%7Bi%3D0%7D%5E%7Bn-1%7D%20i%20%5Ccdot%20Close_%7Bi%7D%7D%7B%5Cfrac%7Bn%28n-1%29%7D2%7D%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="    \mathrm{WMA}_i(Close, n) =\frac{\sum _ {i=0}^{n-1} i \cdot Close_{i}}{\frac{n(n-1)}2}" width="253" height="49" />
     
 -   Hull Moving Averages (**HMA**) of period $n$
-    \begin{equation}
-    \mathrm{HMA}_i(Close, n) = \mathrm{WMA}_i(arg,\sqrt{n}),arg =(2\cdot \mathrm{WMA}(Close,\frac n 2) - \mathrm{WMA}(Close,n))
-    \end{equation}
+
+    <img src="http://www.sciweavers.org/tex2img.php?eq=%20%20%20%20%20%5Cmathrm%7BHMA%7D_i%28Close%2C%20n%29%20%3D%20%5Cmathrm%7BWMA%7D_i%28arg%2C%5Csqrt%7Bn%7D%29%2Carg%20%3D%282%5Ccdot%20%5Cmathrm%7BWMA%7D%28Close%2C%5Cfrac%20n%202%29%20-%20%5Cmathrm%7BWMA%7D%28Close%2Cn%29%29%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="     \mathrm{HMA}_i(Close, n) = \mathrm{WMA}_i(arg,\sqrt{n}),arg =(2\cdot \mathrm{WMA}(Close,\frac n 2) - \mathrm{WMA}(Close,n))" width="594" height="32" />
 
 -   Moving Average Convergence/Divergence (**MACD**)
-    \begin{equation}
-   \mathrm{MACD} = \mathrm{EMA}(Close, 12) - \mathrm{EMA}(Close, 26)
-    \end{equation}
+
+    <img src="http://www.sciweavers.org/tex2img.php?eq=%20%20%20%5Cmathrm%7BMACD%7D%20%3D%20%5Cmathrm%7BEMA%7D%28Close%2C%2012%29%20-%20%5Cmathrm%7BEMA%7D%28Close%2C%2026%29%0A%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="   \mathrm{MACD} = \mathrm{EMA}(Close, 12) - \mathrm{EMA}(Close, 26)" width="326" height="19" />
+    
 -   Commodity Channel Index (**CCI**)
 
-   \begin{equation}
-       \mathrm{CCI} =\frac{TypicalPrice - \mathrm{SMA}(TypicalPrice,20)}{0.015 \times AvgDev}, TypicalPrice = \frac{High + Low + Close}3
-    \end{equation}
+   <img src="http://www.sciweavers.org/tex2img.php?eq=%20%20%20%20%20%20%20%5Cmathrm%7BCCI%7D%20%3D%5Cfrac%7BTypicalPrice%20-%20%5Cmathrm%7BSMA%7D%28TypicalPrice%2C20%29%7D%7B0.015%20%5Ctimes%20AvgDev%7D%2C%20TypicalPrice%20%3D%20%5Cfrac%7BHigh%20%2B%20Low%20%2B%20Close%7D3%0A%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="       \mathrm{CCI} =\frac{TypicalPrice - \mathrm{SMA}(TypicalPrice,20)}{0.015 \times AvgDev}, TypicalPrice = \frac{High + Low + Close}3" width="618" height="40" />
 
 -   **Stochastic Oscillator**
 
-    \begin{equation}
-    StochasticOscillator =100\frac{Close - H14}{H14 - L14}
-    \end{equation}
+    <img src="http://www.sciweavers.org/tex2img.php?eq=%20%20%20%20StochasticOscillator%20%3D100%5Cfrac%7BClose%20-%20H14%7D%7BH14%20-%20L14%7D%0A%0A%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="    StochasticOscillator =100\frac{Close - H14}{H14 - L14}" width="292" height="37" />
 
-    where $H14,L14$ are repsectively the Highest and Lowest prices registered in the last 14 time intervals
+    where <img src="http://www.sciweavers.org/tex2img.php?eq=H14%2CL14%0A%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="H14,L14" width="68" height="17" /> are repsectively the Highest and Lowest prices registered in the last 14 time intervals
 
 -   Relative Strength Index (**RSI**)
 
-    \begin{equation}
-    \mathrm{RSI}(n) = 100 - \frac{100}{1+\mathrm{RS}},\mathrm{RS} = \frac U D, \quad n=14
-     \begin{equation}
+    <img src="http://www.sciweavers.org/tex2img.php?eq=%20%20%20%20%5Cmathrm%7BRSI%7D%28n%29%20%3D%20100%20-%20%5Cfrac%7B100%7D%7B1%2B%5Cmathrm%7BRS%7D%7D%2C%5Cmathrm%7BRS%7D%20%3D%20%5Cfrac%20U%20D%2C%20%5Cquad%20n%3D14%0A%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="    \mathrm{RSI}(n) = 100 - \frac{100}{1+\mathrm{RS}},\mathrm{RS} = \frac U D, \quad n=14" width="310" height="37" />
 
-    where $U,D$ are respectively the average of the differences $Close - Open$ of the last $n$ Bullish/Bearish bars
+    where <img src="http://www.sciweavers.org/tex2img.php?eq=U%2CD%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="U,D" width="37" height="17" /> are respectively the average of the differences <img src="http://www.sciweavers.org/tex2img.php?eq=Close-Open&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="Close-Open" width="104" height="17" /> of the last $n$ Bullish/Bearish bars
 
 -   Rate of Change (**ROC**)
 
-    \begin{equation}
-      \mathrm{ROC}(n) = 100 \frac{Close_i - Close_{i-n}}{Close_{i-n}},n = 14 
-      \end{equation}
+   <img src="http://www.sciweavers.org/tex2img.php?eq=%5Cmathrm%7BROC%7D%28n%29%20%3D%20100%20%5Cfrac%7BClose_i%20-%20Close_%7Bi-n%7D%7D%7BClose_%7Bi-n%7D%7D%2Cn%20%3D%2014%20&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="\mathrm{ROC}(n) = 100 \frac{Close_i - Close_{i-n}}{Close_{i-n}},n = 14 " width="294" height="40" />
 
 -   Percentage Price Oscillator (**PPO**)
 
-    \begin{equation}
-      \mathrm{PPO} =100 \frac{\mathrm{EMA}(Close, 12) - \mathrm{EMA}(Close, 26}{\mathrm{EMA}(Close,26)}
-    \end{equation}
+ <img src="http://www.sciweavers.org/tex2img.php?eq=%20%20%20%20%20%20%5Cmathrm%7BPPO%7D%20%3D100%20%5Cfrac%7B%5Cmathrm%7BEMA%7D%28Close%2C%2012%29%20-%20%5Cmathrm%7BEMA%7D%28Close%2C%2026%7D%7B%5Cmathrm%7BEMA%7D%28Close%2C26%29%7D%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="      \mathrm{PPO} =100 \frac{\mathrm{EMA}(Close, 12) - \mathrm{EMA}(Close, 26}{\mathrm{EMA}(Close,26)}" width="331" height="42" />
 
 -   Know Sure Thing (**KST**)
 
-   \begin{equation}
-      \mathrm{KST} = \mathrm{SMA}(\mathrm{RCMA}_1 + 2\mathrm{RCMA}_2 +3\mathrm{RCMA}_3 +4\mathrm{RCMA}_4, 9),\mathrm{RCMA}_1 = \mathrm{SMA}(\mathrm{ROC}(10), 10), \mathrm{RCMA}_2 = \mathrm{SMA}(\mathrm{ROC}(15), 10),\mathrm{RCMA}_3 = \mathrm{SMA}(\mathrm{ROC}(20), 10),\mathrm{RCMA}_4 = \mathrm{SMA}(\mathrm{ROC}(30), 15) 
-   \end{equation}
+  <img src="http://www.sciweavers.org/tex2img.php?eq=%5Cmathrm%7BKST%7D%20%3D%20%5Cmathrm%7BSMA%7D%28%5Cmathrm%7BRCMA%7D_1%20%2B%202%5Cmathrm%7BRCMA%7D_2%20%2B3%5Cmathrm%7BRCMA%7D_3%20%2B4%5Cmathrm%7BRCMA%7D_4%2C%209%29%2C~%5Cmathrm%7BRCMA%7D_1%20%3D%20%5Cmathrm%7BSMA%7D%28%5Cmathrm%7BROC%7D%2810%29%2C%2010%29%2C~%20%5Cmathrm%7BRCMA%7D_2%20%3D%20%5Cmathrm%7BSMA%7D%28%5Cmathrm%7BROC%7D%2815%29%2C%2010%29%2C~%5Cmathrm%7BRCMA%7D_3%20%3D%20%5Cmathrm%7BSMA%7D%28%5Cmathrm%7BROC%7D%2820%29%2C%2010%29%2C~%5Cmathrm%7BRCMA%7D_4%20%3D%20%5Cmathrm%7BSMA%7D%28%5Cmathrm%7BROC%7D%2830%29%2C%2015%29%20%0A%20%20%20%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="\mathrm{KST} = \mathrm{SMA}(\mathrm{RCMA}_1 + 2\mathrm{RCMA}_2 +3\mathrm{RCMA}_3 +4\mathrm{RCMA}_4, 9),~\mathrm{RCMA}_1 = \mathrm{SMA}(\mathrm{ROC}(10), 10),~ \mathrm{RCMA}_2 = \mathrm{SMA}(\mathrm{ROC}(15), 10),~\mathrm{RCMA}_3 = \mathrm{SMA}(\mathrm{ROC}(20), 10),~\mathrm{RCMA}_4 = \mathrm{SMA}(\mathrm{ROC}(30), 15)    " width="1349" height="19" />
 
 -   Bollinger Bands Middle, Up and Down (**BOLM**,**BOLU**,**BOLD**)
 
-    \begin{equation}
-\mathrm{BOLM} = \mathrm{SMA}(TypicalPrice, 20),\mathrm{BOLU} = \mathrm{BOLM}+ 2\sigma_{20}(TypicalPrice),\mathrm{BOLD} = \mathrm{BOLM}- 2\sigma_{20}(TypicalPrice)
-      \end{equation}
+    <img src="http://www.sciweavers.org/tex2img.php?eq=%5Cmathrm%7BBOLM%7D%20%3D%20%5Cmathrm%7BSMA%7D%28TypicalPrice%2C%2020%29%2C~%5Cmathrm%7BBOLU%7D%20%3D%20%5Cmathrm%7BBOLM%7D%2B%202%5Csigma_%7B20%7D%28TypicalPrice%29%2C~%5Cmathrm%7BBOLD%7D%20%3D%20%5Cmathrm%7BBOLM%7D-%202%5Csigma_%7B20%7D%28TypicalPrice%29%0A%0A%20%20%20%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="\mathrm{BOLM} = \mathrm{SMA}(TypicalPrice, 20),~\mathrm{BOLU} = \mathrm{BOLM}+ 2\sigma_{20}(TypicalPrice),~\mathrm{BOLD} = \mathrm{BOLM}- 2\sigma_{20}(TypicalPrice)   " width="818" height="19" />
 
-    where \(\sigma_{20}(TypicalPrice)\) is the standard deviation of the last 20 Typical Prices
+    where <img src="http://www.sciweavers.org/tex2img.php?eq=%5Csigma_%7B20%7D%28TypicalPrice%29%0A%0A%20%20%20%0A&bc=White&fc=Black&im=gif&fs=12&ff=modern&edit=0" align="center" border="0" alt="\sigma_{20}(TypicalPrice)   " width="132" height="19" /> is the standard deviation of the last 20 Typical Prices
 
 Feature Enginnering
 ===================
