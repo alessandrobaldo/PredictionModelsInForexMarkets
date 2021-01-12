@@ -91,16 +91,20 @@ Temporal Convolutional Neural Network
 Temporal Convolutional Networks, when firstly introduced in 2018, proved to have great performances on sequence-to-sequence tasks like machine translation or speech synthesis in text-to-speech (TTS) systems.
 By merging the benefits of the Convolutional Neural Networks, with the memory-preserving features of the Recurrent-LSTM networks, such structures end to be more versatile, lightweight and faster than the two derivation structures.
 It is desgined around the two basic principles of *causal convolution*, where no information is leaked from past to future, keeping a memory of the initial “states”, and of an architecture mapping dynamically input and output sequences of any length, allowing both the one-to-one, one-to-many and many-to-many paradigms.
-Since a simple causal convolution has the disadvantage to look behind at history with size linear in the depth of the network (i.e. the receptive field grows linearly with every additional layer), the architecture employs convolutions with *dilation* (Figure [fig:dilation]), enabling an exponentially large receptive field. Under a mathematical point of view, this means mapping an input sequence $x \in \mathcal{R}^T$ with a filter $f:\{0,...k-1\}\rightarrow \mathcal{R}$, using a convolution operator $F$ in this way:
+Since a simple causal convolution has the disadvantage to look behind at history with size linear in the depth of the network (i.e. the receptive field grows linearly with every additional layer), the architecture employs convolutions with *dilation* (Figure [fig:dilation]), enabling an exponentially large receptive field. Under a mathematical point of view, this means mapping an input sequence ![input](https://user-images.githubusercontent.com/48285797/104352184-a4eb9780-5506-11eb-8bac-7e6aee63be4b.png)
+ with a filter ![filter](https://user-images.githubusercontent.com/48285797/104352057-7c639d80-5506-11eb-9320-1a5f76970ed1.png), using a convolution operator *F* in this way:
 
-$$F(x)=(x_d f)(x)=\sum_{i=0}^{k-1}x_{s-d \cdot i}$$
+![FilterBig](https://user-images.githubusercontent.com/48285797/104352061-7cfc3400-5506-11eb-8b81-ccb0efcb132e.png)
 
 
-where $d=2^l$ is the dilation factor, $l$ the level of the network and $k$ the kernel size of the filter.
+where ![dilation](https://user-images.githubusercontent.com/48285797/104352063-7d94ca80-5506-11eb-914d-508f31a3dfc5.png)
+ is the dilation factor, ![l](https://user-images.githubusercontent.com/48285797/104352039-766dbc80-5506-11eb-9664-1df33ead4e5c.png)
+ the level of the network and $k$ the kernel size of the filter.
 
 ![dilation](https://user-images.githubusercontent.com/48285797/104187089-a38f7180-5417-11eb-8005-078d491fdced.jpeg)
 
-Using larger dilation enables an output at the top level to represent a wider range of inputs, thus effectively expanding the receptive field of a CNN. There are thus two ways to increase the receptive field of a TCN: choosing lager filter sizes \(k\) and increasing the dilation factor $d$, since the effective history of one layer is $(k-1)d$.
+Using larger dilation enables an output at the top level to represent a wider range of inputs, thus effectively expanding the receptive field of a CNN. There are thus two ways to increase the receptive field of a TCN: choosing lager filter sizes ![k](https://user-images.githubusercontent.com/48285797/104352040-77065300-5506-11eb-8599-b92bbbc449a9.png)
+ and increasing the dilation factor ![d](https://user-images.githubusercontent.com/48285797/104352618-2fcc9200-5507-11eb-854a-59b297c4c65a.png), since the effective history of one layer is ![history](https://user-images.githubusercontent.com/48285797/104352041-779ee980-5506-11eb-9d23-1311b1461c21.png).
 
 ### Residual (Temporal) Block
 
@@ -155,7 +159,7 @@ Random Forest Regression was included to enlarge the spectrum of the methods to 
 K-Nearest Neighbours Regression
 -------------------------------
 
-K-NN Regressors were adopted as a totally different learning paradigm. By performing a one-to-one comparison with the \(K\) most similar images, this method encloses and summarizes the concept of periodicity of some financial patterns from past to future. The most similar images will then highly influence the prediction for the subsequent interval.
+K-NN Regressors were adopted as a totally different learning paradigm. By performing a one-to-one comparison with the *K* most similar images, this method encloses and summarizes the concept of periodicity of some financial patterns from past to future. The most similar images will then highly influence the prediction for the subsequent interval.
 
 Appendices
 =====================
@@ -215,7 +219,7 @@ Details: Indicators
     
     ![RSI](https://user-images.githubusercontent.com/48285797/104350660-b2078700-5504-11eb-9957-e7551f0a9e4f.png)
 
-    where *U,D* are respectively the average of the differences *Close-Open* of the last $n$ Bullish/Bearish bars
+    where *U,D* are respectively the average of the differences *Close-Open* of the last *n* Bullish/Bearish bars
 
 -   Rate of Change (**ROC**)
     
