@@ -269,7 +269,7 @@ As a baseline, all the deep learning models were implemented through the Keras l
 Temporal Convolutional Network (TCN)
 ------------------------------------
 
-The final TCN structure was conceived by correctly testing different combinations of layers and depth of the convolutional layers. The overall network is reported at Figure [fig:TCN] and resulted in a 7-levels network, where each one is represented by a Residual (Temporal) Block. The high number of filters of each convolutional layer combined with the high dilation factor gave the network optimal memory-preserving properties.
+The final TCN structure was conceived by correctly testing different combinations of layers and depth of the convolutional layers. It resulted in a 7-levels network, where each one is represented by a Residual (Temporal) Block. The high number of filters of each convolutional layer combined with the high dilation factor gave the network optimal memory-preserving properties.
 
 ![TCNFinal](https://user-images.githubusercontent.com/48285797/104187068-a0948100-5417-11eb-9952-92b2dce6a4c8.png)
 
@@ -286,7 +286,7 @@ The other optimized parameters used during the experiments were:
 Long Short-Term Memory Network (LSTM)
 -------------------------------------
 
-For the final network configuration, the number of LSTM layers and the number of cells inside each layer were used as hyperparameters to be tuned; in the end, the final structure (Figure [fig:LSTM]) had the following settings:
+For the final network configuration, the number of LSTM layers and the number of cells inside each layer were used as hyperparameters to be tuned; in the end, the final structure had the following settings:
 
 -   LSTM layers: 2
 
@@ -303,7 +303,7 @@ For the final network configuration, the number of LSTM layers and the number of
 Convolutional Neural Network (CNN)
 ----------------------------------
 
-As previously mentioned, also the CNN was tuned by including the disposition of the elements of the architecture as hyperparameters. In this case, both the number of convolutional blocks and filters, as well as the kernel, were taken into account. In the end, the structure resulted to be as Figure [fig:CNN] portrays, having the following setup:
+As previously mentioned, also the CNN was tuned by including the disposition of the elements of the architecture as hyperparameters. In this case, both the number of convolutional blocks and filters, as well as the kernel, were taken into account. In the end, the structure resulted to be have the following setup:
 
 -   Epochs: 200
 
@@ -318,46 +318,42 @@ As previously mentioned, also the CNN was tuned by including the disposition of 
 Random Forest Regression and Impurity 
 --------------------------------------
 
-The Random Forest Regression models allowed to evaluate further statistics on the explained variance of each future on the final prediction. This can be done by the model by monitoring how the OOB (out-of-the-bag) error evolves according to the splits at each node and the features excluded by each estimator. As Table [tab:explainedvar] summarizes, over 95% of the total variance is explained by 5 of the fastest moving averages, being another confirmation of the aforementioned Feature Engineering.
+The Random Forest Regression models allowed to evaluate further statistics on the explained variance of each future on the final prediction. This can be done by the model by monitoring how the OOB (out-of-the-bag) error evolves according to the splits at each node and the features excluded by each estimator. Over 95% of the total variance is explained by 5 of the fastest moving averages, being another confirmation of the aforementioned Feature Engineering.
 
 ![Variance](https://user-images.githubusercontent.com/48285797/104189563-236b0b00-541b-11eb-84d1-0b159c476a4a.png)
 
 Error Measures: Pearson Correlation, Dynamic Time Warping (DTW) and Fast DTW
 ============================================================================
 
-The first measure the author decided to introduce was a correlation term, which was able to correctly capture the general trend of the true time series. The Pearson Correlation ([eq:pearson]) thus represented an as simple as effective mathematical indicator for what concerns the spatial evolution of the financial trend.
+The first measure the author decided to introduce was a correlation term, which was able to correctly capture the general trend of the true time series. The Pearson Correlation thus represented an as simple as effective mathematical indicator for what concerns the spatial evolution of the financial trend.
 
-\begin{equation}\label{eq:pearson}
-    \rho_{XY}= \frac{cov(X,Y)}{\sigma(x)\sigma(Y)}
-    \end{equation}
 
-In the deep learning experiments it was firstly used retrospectively as a method to favour those models which not only minimized the distance with respect to the real trend (i.e. low MSE), but also which were able to maximize the correlation. The Equation ([eq:acceptance]) models the decision rule adopted at the end of each training procedure:
+![Pearson](https://user-images.githubusercontent.com/48285797/104353243-f9434700-5507-11eb-8e6a-300f8ed5d3ff.png)
 
-\begin{equation}\label{eq:acceptance}
-    \underset{\theta}{\mathrm{argmin}}~ \mathrm{MSE}_{\hat{y},y} \cdot (1-\rho_{\hat{y},y})
-    \end{equation}
+In the deep learning experiments it was firstly used retrospectively as a method to favour those models which not only minimized the distance with respect to the real trend (i.e. low MSE), but also which were able to maximize the correlation. TThe decision rule adopted at the end of each training procedure was:
+
+![MSEPearson](https://user-images.githubusercontent.com/48285797/104353237-f8121a00-5507-11eb-8df2-b36ddc8efa94.png)
 
 This simple mathematical combination ensured to have a more global view on the outcomes and to increase the overall optimality.
 The next tentative mainly dealt with the plug-in of such decision rule inside the loss function itself, but, due to the consequent increase of complexity and training times of the networks structure, this task was left for future improvements.
 Given the aforementioned spatial modelling, the intent was then to include in the error measures an indicator which could symmetrically act on the temporal domain. Indeed, when dealing with random walk time series (as the financial case is), predictive models are distinguished by systematically missing the so-called *pivot* points, i.e. where the trend changes its concavity (on the local minima and maxima). This often results in a delay in the prediction of these points, since each model prediction would be obtained based on the high autocorrelation existing with the last known sample.
 In literature ,, there are several studies about the most correct temporal measures/loss to introduce in deep learning models and in this project two of them have been adopted to verify whether an increase of the complexity is justified with respect to their effectiveness.
 The first measure is the so-called *Dynamic Time Warping*. Behind the computation of the DTW there is a solution of a Quadratic Optimization Problem making use of Dynamic Programming. The value of the indicator is the value of the shortest path built between two time series, according to a *window* parameter, which regulates a one-to-one unidirectional mapping from the predicted output and the real trend.
-Despite its effectiveness in describing the temporal nature of the predictions, its complexity (\(O(n^2)\)) is quite limiting, especially whether there is the necessity to plug it into a loss function. As did with the Pearson correlation coefficient, its evaluation was done retrospectively according to the following updated decision rule:
+Despite its effectiveness in describing the temporal nature of the predictions, its quadratic complexity is quite limiting, especially whether there is the necessity to plug it into a loss function. As did with the Pearson correlation coefficient, its evaluation was done retrospectively according to the following updated decision rule:
 
-\begin{equation}
-\underset{\theta}{\mathrm{argmin}}~ \mathrm{MSE}_{\hat{y},y} \cdot (1-\rho_{\hat{y},y})\cdot \mathrm{DTW}_{\hat{y},y, window}
-\end{equation}
+![DTW](https://user-images.githubusercontent.com/48285797/104353238-f8aab080-5507-11eb-86f5-3e7a96cbfe2a.png)
+
 As stated before, some brief experiments were held by customizing the loss function used in deep learning models, but that would have been too time consuming.
 The last indicator reported for the sake of completeness is the Fast-DTW (*Fast Dynamic Time Warping*) . It is a simplified, but equally accurate version of the DTW, bounding the calculations to a linear complexity.
 
 Details: Trading Strategy
 =========================
 
-The trading strategy is an event-based simulation, automatically deciding whether to enter or not the market for each time $t$, based on the price evolution predicted at $t+1$. In doing so, it is checked if the current predicted price \(\tilde{p}(t)\) represents a local minimum (i.e. $\tilde{p}(t-1)>\tilde{p}(t)<\tilde{p}(t+1)$) or maximum (i.e. $\tilde{p}(t-1)<\tilde{p}(t)>\tilde{p}(t+1)$ ) to then open a BUY or a SELL position, respectively.
-In opening an order, of course, the real price is considered as the entry price. A Take Profit (TP) threshold is set by considering the predicted delta. A Stop Loss (SL) value is determined too, based on the $risk Factor$ parameter the strategy is configured. This parameter regulates the predisposition to risk of the investor: the higher the \(risk Factor\), the minor the risk, and thus the closer will be the SL with respect to the TP threshold. Also in these cases, both the TP and SL values are referred to true prices.
-The trading method then defines a $budget$ value as the initial capitalization and a $margin Call$ value, simulating the notification a broker would take in case the investments became too lossy. In this case, the strategy automatically limits the possibility to invest large quantities.
-These quantities are also governed by $leverage$ parameter, which automatically allows to determine an upper bound on the lot measure, represented by the $maximumLot$ parameter. This is continuously updated by taking into consideration the available margin (i.e. the free capitalization quota of the budget above the $margin Call$) and the adopted leverage. The so-limited $lot$ measure to be invested will be then calculated according to the outcome of the previous transactions: profitable transactions will allow to increase it by a \(step Lot\) measure, while lossy investments will downgrade the previous \(lot\) value of two steps (i.e. in this sense, by penalizing more the prediction errors of the algorithms, this can be thought as another countermeasure towards risk).
-Finally the trading strategy accepts a $smooth Factor \in (0,1]$ parameter, which determines how much confidence the trader wants to give to the predictor: by choosing a low $smooth Factor$ the trader would pursue a more conservative approach, by smoothing the predictions of the variations and thus limiting the decisions of the model.
+The trading strategy is an event-based simulation, automatically deciding whether to enter or not the market for each time $t$, based on the price evolution predicted at $t+1$. In doing so, it is checked if the current predicted price represents a local minimum or maximum  to then open a BUY or a SELL position, respectively.
+In opening an order, of course, the real price is considered as the entry price. A Take Profit (TP) threshold is set by considering the predicted delta. A Stop Loss (SL) value is determined too, based on the $risk Factor$ parameter the strategy is configured. This parameter regulates the predisposition to risk of the investor: the higher the *risk Factor*, the minor the risk, and thus the closer will be the SL with respect to the TP threshold. Also in these cases, both the TP and SL values are referred to true prices.
+The trading method then defines a *budget* value as the initial capitalization and a $margin Call$ value, simulating the notification a broker would take in case the investments became too lossy. In this case, the strategy automatically limits the possibility to invest large quantities.
+These quantities are also governed by $leverage$ parameter, which automatically allows to determine an upper bound on the lot measure, represented by the *maximumLot* parameter. This is continuously updated by taking into consideration the available margin (i.e. the free capitalization quota of the budget above the *margin Call*) and the adopted leverage. The so-limited *lot* measure to be invested will be then calculated according to the outcome of the previous transactions: profitable transactions will allow to increase it by a *step Lot* measure, while lossy investments will downgrade the previous *lot* value of two steps (i.e. in this sense, by penalizing more the prediction errors of the algorithms, this can be thought as another countermeasure towards risk).
+Finally the trading strategy accepts a *smooth Factor* parameter, which determines how much confidence the trader wants to give to the predictor: by choosing a low *smooth Factor* the trader would pursue a more conservative approach, by smoothing the predictions of the variations and thus limiting the decisions of the model.
 After an order is opened and the available margin is decreased, at each subsequent time interval it is monitored by coherently increasing/decreasing the budget according to how the true price evolved; eventually, the order is closed if the Take Profit (respectively the Stop Loss) was met in the transition from the previous time frame. To do so, the High and the Low prices of the time frames are considered to check if the extreme variations of the price overcame one of the two thresholds.
 Despite the very detailed implementation of this automatic trading strategy, the algorithm has to cope with the limits of the time granularity. It means that the algorithm is not able to determine if, in a time interval where the real price met both the TP and SL, it had hit before one than the other. In order to accomplish a worst case scenario (i.e. the minimum achievable profit), in such cases the algorithm always registers a loss. In general, this decision process happens quite often (about 30% of the total market orders is characterized by this ambiguity), therefore the results are still more pessimistic than the real materializable worst situation.
 
