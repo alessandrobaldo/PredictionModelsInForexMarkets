@@ -1,10 +1,9 @@
 # Prediction Models in Forex Markets
 
 ## Structure of the code
-The main notebook is <strong>TimeSeriesConversion.ipynb</strong> where all the experiments referring to the test models were held. This module is divided in three main sections:		
+The main notebook is <strong>TimeSeriesConversion.ipynb</strong>. This module is divided in three main sections:		
 - Overview of data		
-- Deep Learning models
-- Machine Learning models
+- Deep Learning and Machine Learning models
 - Trading Strategy
 
 The notebook <strong>DatasetCreation.ipynb</strong> shows how data are generated starting from the raw csv files present in the folder "Data"
