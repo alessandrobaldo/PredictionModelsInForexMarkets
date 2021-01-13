@@ -44,11 +44,8 @@ The folder "Trials" collect some scripts and notebooks referring to some experim
 All the working  models were written with the Tensorflow 2.0 and Keras Libraries
 
 # Overview of the Project
-[
 
 In this study, A. Baldo proposes a deeper analysis on the algorithmic treatment of financial time series, with a focus on Forex markets’ applications. The relevant aspects of the paper refers to a more beneficial data arrangement, proposed into an image format and to the application of a Temporal Convolutional Neural Network model, representing a more than valid alternative to Recurrent Neural Netowrks. The results are supported by expanding the comparison to other more consolidated deep learning models, as well as with some of the most performing Machine Learning methods. Finally, a financial framework is proposed to test the real effectiveness of the algorithms.
-
-]
 
 Introduction
 ============
