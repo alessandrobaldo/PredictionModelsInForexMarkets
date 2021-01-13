@@ -14,7 +14,7 @@ The folder "Data" contains the raw data as were retrieved from the EaForexAcadem
 
 The folder "DataReady" contains the prepared data as used by the different models. The division of the pairs and the files is the same as described for the "Data" folder
 
-The folder "Models" is divided in 4 sub-folders: "CNN","RNN","TCN","ML". In this folder the all the best model weights and trained structures are saved. For the deep learning models, the architecture is saved in a JSON file, while the model parameters are in the h5 format. The ML models are in compressed in .tar.gz files. Once uncompressed, their format is .sav
+The folder "Models" is divided in 4 sub-folders: "CNN","RNN","TCN","ML". In this folder the all the best model weights and trained structures are saved. For the deep learning models, the architecture is saved in a JSON file, while the model parameters are in the h5 format. The ML models are compressed in .tar.gz files. Once uncompressed, their format is .sav
 
 The folder "Results" contains only a part of the logs of the training procedures done during this project. Also in this case, the logs contains a similar division as described for the Models folder. In general it is possible to find two files of result:
 - ResultsMODELNAME.txt: contains an example of logs of result of a training procedure of the model MODELNAME on a singular currency pair
