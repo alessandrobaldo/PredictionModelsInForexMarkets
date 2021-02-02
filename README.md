@@ -1,6 +1,6 @@
 # Prediction Models in Forex Markets
 
-This project was developed for the MALIS course ad EURECOM university. It received an honorable mention among many projects in the course: https://malis-course.github.io/2020/11/22/final-projects/
+This project received an honorable mention among many projects in the course: https://malis-course.github.io/2020/11/22/final-projects/
 
 ## Structure of the code
 The main notebook is <strong>TimeSeriesConversion.ipynb</strong>. This module is divided in three main sections:		
